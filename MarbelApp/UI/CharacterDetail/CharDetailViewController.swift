@@ -10,9 +10,6 @@ import UIKit
 
 /// ViewModel que representa el personaje seleccionado
 class CharDetailViewController: UIViewController {
-    /// Objeto para el ViewModel
-    let viewModel: CharDetailViewModel
-    
     lazy var backgroundView: UIView = {
         let view: UIView = UIView(frame: self.view.bounds)
         view.backgroundColor = UIColor.white
@@ -20,7 +17,6 @@ class CharDetailViewController: UIViewController {
         return view
     }()
     
-    /// Tabla que contiene la lista de personajes
     lazy var imageView: UIImageView = {
         let image: UIImageView = UIImageView()
         image.contentMode = .scaleAspectFill
@@ -34,6 +30,25 @@ class CharDetailViewController: UIViewController {
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
+    
+    lazy var flowLayout: UICollectionViewFlowLayout = {
+        let layout = UICollectionViewFlowLayout()
+        layout.itemSize = CGSize(width: 100.0, height: 100.0)
+        layout.scrollDirection = .horizontal
+        layout.minimumInteritemSpacing = 4.0
+        return layout
+    }()
+
+    lazy var collectionView: UICollectionView = {
+        let collectionView = UICollectionView(frame: .zero, collectionViewLayout: flowLayout)
+        collectionView.register(ComicCell.self, forCellWithReuseIdentifier: String(describing: ComicCell.self))
+        collectionView.backgroundColor = .white
+        collectionView.dataSource = self
+        collectionView.translatesAutoresizingMaskIntoConstraints = false
+        return collectionView
+    }()
+    
+    let viewModel: CharDetailViewModel
     
     
     // MARK: Life Cycle
@@ -53,6 +68,7 @@ class CharDetailViewController: UIViewController {
         view.addSubview(backgroundView)
         view.addSubview(imageView)
         view.addSubview(nameLabel)
+        view.addSubview(collectionView)
         
         NSLayoutConstraint.activate([
             backgroundView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
@@ -72,6 +88,13 @@ class CharDetailViewController: UIViewController {
             nameLabel.topAnchor.constraint(equalTo: imageView.bottomAnchor, constant: 32.0),
             nameLabel.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor)
         ])
+        
+        NSLayoutConstraint.activate([
+            collectionView.topAnchor.constraint(equalTo: nameLabel.bottomAnchor, constant: 32.0),
+            collectionView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 32.0),
+            collectionView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -32.0),
+            collectionView.heightAnchor.constraint(equalToConstant: 100.0),
+        ])
     }
     
     override func viewDidLoad() {
@@ -79,6 +102,24 @@ class CharDetailViewController: UIViewController {
         
         self.navigationController?.navigationBar.tintColor = .black
         viewModel.viewWasLoaded()
+    }
+}
+
+
+// MARK: UICollectionView DataSource
+
+extension CharDetailViewController: UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return viewModel.numberOfComics(in: section)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: String(describing: ComicCell.self), for: indexPath) as? ComicCell else {
+            fatalError()
+        }
+        
+        cell.viewModel = viewModel.comicModel(at: indexPath)
+        return cell
     }
 }
 
@@ -91,7 +132,15 @@ extension CharDetailViewController: CharsDetailViewModelDelegate {
         nameLabel.text = viewModel.char?.char.name
     }
     
+    func charComicsFetched() {
+        collectionView.reloadData()
+    }
+    
     func errorFetchingChar(message: String) {
+        showAlert(message: message, title: Constants.error)
+    }
+    
+    func errorFetchingCharComics(message: String) {
         showAlert(message: message, title: Constants.error)
     }
 }

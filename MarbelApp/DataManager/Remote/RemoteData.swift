@@ -9,6 +9,7 @@
 import Foundation
 
 class RemoteData: RemoteDataManager {
+    /// Objeto de acceso al API
     let session: APISession
     
     init(session: APISession) {
@@ -18,15 +19,22 @@ class RemoteData: RemoteDataManager {
     
     // MARK: Functions
     
-    func fetchAllChars(completion: @escaping (Result<AllCharsResponse?, Error>) -> ()) {
+    func fetchAllCharsRemote(completion: @escaping (Result<AllCharsResponse?, Error>) -> ()) {
         let request = AllCharsRequest()
         self.session.sendRequest(request: request) { (result) in
             completion(result)
         }
     }
     
-    func fetchChar(id: Int, completion: @escaping (Result<SingleCharResponse?, Error>) -> ()) {
+    func fetchCharRemote(id: Int, completion: @escaping (Result<SingleCharResponse?, Error>) -> ()) {
         let request = SingleCharRequest(id: id)
+        self.session.sendRequest(request: request) { (result) in
+            completion(result)
+        }
+    }
+    
+    func fetchCharComicsRemote(id: Int, completion: @escaping (Result<CharComicsResponse?, Error>) -> ()) {
+        let request = CharComicsRequest(id: id)
         self.session.sendRequest(request: request) { (result) in
             completion(result)
         }

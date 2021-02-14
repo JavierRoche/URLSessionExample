@@ -10,7 +10,9 @@ import Foundation
 
 protocol CharsDetailViewModelDelegate: class {
     func charFetched()
+    func charComicsFetched()
     func errorFetchingChar(message: String)
+    func errorFetchingCharComics(message: String)
 }
 
 class CharDetailViewModel {
@@ -22,6 +24,7 @@ class CharDetailViewModel {
     /// Id del personaje seleccionado
     let charId: Int
     var char: CharCellViewModel?
+    var comicViewModels: [ComicCellViewModel] = []
     
     
     // MARK: Life Cycle
@@ -37,6 +40,23 @@ class CharDetailViewModel {
     // MARK: Public Functions
     
     func viewWasLoaded() {
+        self.getChar()
+        self.getCharComics()
+    }
+    
+    func numberOfComics(in section: Int) -> Int {
+        return comicViewModels.count
+    }
+    
+    func comicModel(at indexpath: IndexPath) -> ComicCellViewModel? {
+        guard indexpath.row < comicViewModels.count else { return nil }
+        return comicViewModels[indexpath.row]
+    }
+    
+    
+    // MARK: Private Functions
+
+    fileprivate func getChar() {
         self.charDetailDataManager.fetchChar(id: self.charId) { [weak self] (result) in
             switch result {
             case .success(let response):
@@ -52,6 +72,30 @@ class CharDetailViewModel {
                     
                 } else {
                     self?.delegate?.errorFetchingChar(message: error.localizedDescription)
+                }
+            }
+        }
+    }
+
+    fileprivate func getCharComics() {
+        self.charDetailDataManager.fetchCharComics(id: self.charId) { [weak self] (result) in
+            switch result {
+            case .success(let response):
+                guard let response = response else { return }
+                /// Mapeamos el JSON de datos al modelo de datos
+                self?.comicViewModels = response.data.results.map({
+                    ComicCellViewModel(comic: $0)
+                })
+                /// Informamos al controlador que hemos leido todos los datos
+                self?.delegate?.charComicsFetched()
+                
+            case .failure(let error):
+                if let errorType = error as? ApiError {
+                    let message = ("Code\(errorType.code ?? String())\n\(errorType.message ?? String())")
+                    self?.delegate?.errorFetchingCharComics(message: message)
+                    
+                } else {
+                    self?.delegate?.errorFetchingCharComics(message: error.localizedDescription)
                 }
             }
         }

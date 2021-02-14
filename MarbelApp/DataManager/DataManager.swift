@@ -19,12 +19,16 @@ class DataManager {
 
 extension DataManager: CharsDataManager {
     func fetchAllChars(completion: @escaping (Result<AllCharsResponse?, Error>) -> ()) {
-        remoteDataManager.fetchAllChars(completion: completion)
+        remoteDataManager.fetchAllCharsRemote(completion: completion)
     }
 }
 
 extension DataManager: CharDetailDataManager {
     func fetchChar(id: Int, completion: @escaping (Result<SingleCharResponse?, Error>) -> ()) {
-        remoteDataManager.fetchChar(id: id, completion: completion)
+        remoteDataManager.fetchCharRemote(id: id, completion: completion)
+    }
+    
+    func fetchCharComics(id: Int, completion: @escaping (Result<CharComicsResponse?, Error>) -> ()) {
+        remoteDataManager.fetchCharComicsRemote(id: id, completion: completion)
     }
 }
