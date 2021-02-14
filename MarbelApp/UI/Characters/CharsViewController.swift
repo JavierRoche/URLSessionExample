@@ -48,7 +48,7 @@ class CharsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.viewModel.viewWasLoaded()
+        viewModel.viewWasLoaded()
     }
 }
 
@@ -59,7 +59,7 @@ extension CharsViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         /// Al tappear una celda lo comunicamos al ViewModel
-        self.viewModel.didSelectRow(at: indexPath)
+        viewModel.didSelectRow(at: indexPath)
     }
 }
 
@@ -68,15 +68,15 @@ extension CharsViewController: UITableViewDelegate {
 
 extension CharsViewController: UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
-        return self.viewModel.numberOfSections()
+        return viewModel.numberOfSections()
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.viewModel.numberOfRows(in: section)
+        return viewModel.numberOfRows(in: section)
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return self.viewModel.heightOfRow()
+        return viewModel.heightOfRow()
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -94,10 +94,10 @@ extension CharsViewController: UITableViewDataSource {
 
 extension CharsViewController: CharsViewModelDelegate {
     func charsFetched() {
-        self.tableView.reloadData()
+        tableView.reloadData()
     }
     
-    func errorFetchingChars() {
-        self.showAlert(message: Constants.fetchingError, title: Constants.error)
+    func errorFetchingChars(message: String) {
+        showAlert(message: message, title: Constants.error)
     }
 }

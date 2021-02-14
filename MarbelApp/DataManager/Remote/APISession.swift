@@ -15,8 +15,8 @@ enum APISessionError: Error {
 }
 
 struct ApiError: Codable {
-    let action: String?
-    let errors: [String]?
+    let code: String?
+    let message: String?
 }
 
 final class APISession {

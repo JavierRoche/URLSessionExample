@@ -8,7 +8,7 @@
 
 import Foundation
 
-enum Method: String {
+enum Method: String, CaseIterable {
     case GET
     case POST
     case PUT

@@ -18,7 +18,6 @@ enum Constants {
     static let listDashIS: String = "list.dash"
     static let appTitle: String = "Marvel Characters"
     static let error: String = "Error"
-    static let fetchingError: String = "Error fetching characters\nPlease try again later"
     static let NSCoderError: String = "init(coder:) has not been implemented"
     static let https: String = "https"
     static let apiURL: String = "https://gateway.marvel.com"

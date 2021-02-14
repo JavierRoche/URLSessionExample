@@ -10,7 +10,7 @@ import Foundation
 
 protocol CharsDetailViewModelDelegate: class {
     func charFetched()
-    func errorFetchingChar()
+    func errorFetchingChar(message: String)
 }
 
 class CharDetailViewModel {
@@ -45,8 +45,14 @@ class CharDetailViewModel {
                 self?.char = CharCellViewModel(char: response.data.results[0])
                 self?.char?.delegate = self
                 
-            case .failure:
-                self?.delegate?.errorFetchingChar()
+            case .failure(let error):
+                if let errorType = error as? ApiError {
+                    let message = ("Code\(errorType.code ?? String())\n\(errorType.message ?? String())")
+                    self?.delegate?.errorFetchingChar(message: message)
+                    
+                } else {
+                    self?.delegate?.errorFetchingChar(message: error.localizedDescription)
+                }
             }
         }
     }

@@ -37,6 +37,10 @@ class Coordinator {
     func removeAllChildCoordinators() {
         coordinatorChild.removeAll()
     }
+    
+    func countCoordinators() -> Int {
+        return coordinatorChild.count
+    }
 }
 
 extension Coordinator: Equatable {

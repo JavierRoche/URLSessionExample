@@ -16,7 +16,7 @@ protocol CharsViewModelCoordinatorDelegate: class {
 /// Protocolo delegado de comunicacion con el controlador de la UI
 protocol CharsViewModelDelegate: class {
     func charsFetched()
-    func errorFetchingChars()
+    func errorFetchingChars(message: String)
 }
 
 /// ViewModel que representa el listado de personajes
@@ -53,8 +53,14 @@ class CharsViewModel {
                 /// Informamos al controlador que hemos leido todos los datos
                 self?.delegate?.charsFetched()
                 
-            case .failure:
-                self?.delegate?.errorFetchingChars()
+            case .failure(let error):
+                if let errorType = error as? ApiError {
+                    let message = ("Code\(errorType.code ?? String())\n\(errorType.message ?? String())")
+                    self?.delegate?.errorFetchingChars(message: message)
+                    
+                } else {
+                    self?.delegate?.errorFetchingChars(message: error.localizedDescription)
+                }
             }
         }
     }
@@ -79,6 +85,6 @@ class CharsViewModel {
     func didSelectRow(at indexpath: IndexPath) {
         /// El ViewModel se lo comunica al Coordinator para que decida la navegacion
         guard indexpath.row < charsViewModels.count else { return }
-        coordinatorDelegate?.didSelect(char: self.charsViewModels[indexpath.row].char)
+        coordinatorDelegate?.didSelect(char: charsViewModels[indexpath.row].char)
     }
 }

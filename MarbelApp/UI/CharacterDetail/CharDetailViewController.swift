@@ -78,7 +78,7 @@ class CharDetailViewController: UIViewController {
         super.viewDidLoad()
         
         self.navigationController?.navigationBar.tintColor = .black
-        self.viewModel.viewWasLoaded()
+        viewModel.viewWasLoaded()
     }
 }
 
@@ -87,11 +87,11 @@ class CharDetailViewController: UIViewController {
 
 extension CharDetailViewController: CharsDetailViewModelDelegate {
     func charFetched() {
-        self.imageView.image = self.viewModel.char?.charImage
-        self.nameLabel.text = self.viewModel.char?.char.name
+        imageView.image = viewModel.char?.charImage
+        nameLabel.text = viewModel.char?.char.name
     }
     
-    func errorFetchingChar() {
-        self.showAlert(message: Constants.fetchingError, title: Constants.error)
+    func errorFetchingChar(message: String) {
+        showAlert(message: message, title: Constants.error)
     }
 }
