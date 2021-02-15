@@ -159,8 +159,8 @@
 				18A9475E25D8246E0068E31E /* ThumbnailTest.swift */,
 				18A9476025D827390068E31E /* MethodTest.swift */,
 				18A9476625D82A6D0068E31E /* CoordinatorTest.swift */,
-				182A3F9725D41AF200543C92 /* Info.plist */,
 				18C0093025D9AE08008A5E15 /* ComicTest.swift */,
+				182A3F9725D41AF200543C92 /* Info.plist */,
 			);
 			path = MarbelAppTests;
 			sourceTree = "<group>";
