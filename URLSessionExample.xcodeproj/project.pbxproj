@@ -57,13 +57,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		182A3F7B25D41AF000543C92 /* MarbelApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MarbelApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		182A3F7B25D41AF000543C92 /* URLSessionExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = URLSessionExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		182A3F7E25D41AF000543C92 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		182A3F8025D41AF000543C92 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		182A3F8725D41AF200543C92 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		182A3F8A25D41AF200543C92 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		182A3F8C25D41AF200543C92 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		182A3F9125D41AF200543C92 /* MarbelAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MarbelAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		182A3F9125D41AF200543C92 /* URLSessionExampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = URLSessionExampleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		182A3F9525D41AF200543C92 /* MarbelAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarbelAppTests.swift; sourceTree = "<group>"; };
 		182A3F9725D41AF200543C92 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		182A3FA125D41CDA00543C92 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
@@ -121,8 +121,8 @@
 		182A3F7225D41AEF00543C92 = {
 			isa = PBXGroup;
 			children = (
-				182A3F7D25D41AF000543C92 /* MarbelApp */,
-				182A3F9425D41AF200543C92 /* MarbelAppTests */,
+				182A3F7D25D41AF000543C92 /* URLSessionExample */,
+				182A3F9425D41AF200543C92 /* URLSessionExampleTests */,
 				182A3F7C25D41AF000543C92 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -130,13 +130,13 @@
 		182A3F7C25D41AF000543C92 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				182A3F7B25D41AF000543C92 /* MarbelApp.app */,
-				182A3F9125D41AF200543C92 /* MarbelAppTests.xctest */,
+				182A3F7B25D41AF000543C92 /* URLSessionExample.app */,
+				182A3F9125D41AF200543C92 /* URLSessionExampleTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		182A3F7D25D41AF000543C92 /* MarbelApp */ = {
+		182A3F7D25D41AF000543C92 /* URLSessionExample */ = {
 			isa = PBXGroup;
 			children = (
 				182A3F7E25D41AF000543C92 /* AppDelegate.swift */,
@@ -148,10 +148,10 @@
 				1891524025D6CF3100C6F80A /* UI */,
 				1895EB8825D52D0700A7C6B9 /* Model */,
 			);
-			path = MarbelApp;
+			path = URLSessionExample;
 			sourceTree = "<group>";
 		};
-		182A3F9425D41AF200543C92 /* MarbelAppTests */ = {
+		182A3F9425D41AF200543C92 /* URLSessionExampleTests */ = {
 			isa = PBXGroup;
 			children = (
 				182A3F9525D41AF200543C92 /* MarbelAppTests.swift */,
@@ -162,7 +162,7 @@
 				18C0093025D9AE08008A5E15 /* ComicTest.swift */,
 				182A3F9725D41AF200543C92 /* Info.plist */,
 			);
-			path = MarbelAppTests;
+			path = URLSessionExampleTests;
 			sourceTree = "<group>";
 		};
 		182A3FA025D41CCA00543C92 /* Coordinator */ = {
@@ -296,9 +296,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		182A3F7A25D41AF000543C92 /* MarbelApp */ = {
+		182A3F7A25D41AF000543C92 /* URLSessionExample */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 182A3F9A25D41AF200543C92 /* Build configuration list for PBXNativeTarget "MarbelApp" */;
+			buildConfigurationList = 182A3F9A25D41AF200543C92 /* Build configuration list for PBXNativeTarget "URLSessionExample" */;
 			buildPhases = (
 				182A3F7725D41AF000543C92 /* Sources */,
 				182A3F7825D41AF000543C92 /* Frameworks */,
@@ -308,14 +308,14 @@
 			);
 			dependencies = (
 			);
-			name = MarbelApp;
+			name = URLSessionExample;
 			productName = MarbelApp;
-			productReference = 182A3F7B25D41AF000543C92 /* MarbelApp.app */;
+			productReference = 182A3F7B25D41AF000543C92 /* URLSessionExample.app */;
 			productType = "com.apple.product-type.application";
 		};
-		182A3F9025D41AF200543C92 /* MarbelAppTests */ = {
+		182A3F9025D41AF200543C92 /* URLSessionExampleTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 182A3F9D25D41AF200543C92 /* Build configuration list for PBXNativeTarget "MarbelAppTests" */;
+			buildConfigurationList = 182A3F9D25D41AF200543C92 /* Build configuration list for PBXNativeTarget "URLSessionExampleTests" */;
 			buildPhases = (
 				182A3F8D25D41AF200543C92 /* Sources */,
 				182A3F8E25D41AF200543C92 /* Frameworks */,
@@ -326,9 +326,9 @@
 			dependencies = (
 				182A3F9325D41AF200543C92 /* PBXTargetDependency */,
 			);
-			name = MarbelAppTests;
+			name = URLSessionExampleTests;
 			productName = MarbelAppTests;
-			productReference = 182A3F9125D41AF200543C92 /* MarbelAppTests.xctest */;
+			productReference = 182A3F9125D41AF200543C92 /* URLSessionExampleTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -350,7 +350,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 182A3F7625D41AF000543C92 /* Build configuration list for PBXProject "MarbelApp" */;
+			buildConfigurationList = 182A3F7625D41AF000543C92 /* Build configuration list for PBXProject "URLSessionExample" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -363,8 +363,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				182A3F7A25D41AF000543C92 /* MarbelApp */,
-				182A3F9025D41AF200543C92 /* MarbelAppTests */,
+				182A3F7A25D41AF000543C92 /* URLSessionExample */,
+				182A3F9025D41AF200543C92 /* URLSessionExampleTests */,
 			);
 		};
 /* End PBXProject section */
@@ -443,7 +443,7 @@
 /* Begin PBXTargetDependency section */
 		182A3F9325D41AF200543C92 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 182A3F7A25D41AF000543C92 /* MarbelApp */;
+			target = 182A3F7A25D41AF000543C92 /* URLSessionExample */;
 			targetProxy = 182A3F9225D41AF200543C92 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -580,13 +580,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5NGAV2U6RN;
-				INFOPLIST_FILE = MarbelApp/Resources/Info.plist;
+				INFOPLIST_FILE = URLSessionExample/Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = Roche.MarbelApp;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = Roche.URLSessionExample;
+				PRODUCT_NAME = URLSessionExample;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -598,13 +598,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5NGAV2U6RN;
-				INFOPLIST_FILE = MarbelApp/Resources/Info.plist;
+				INFOPLIST_FILE = URLSessionExample/Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = Roche.MarbelApp;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = Roche.URLSessionExample;
+				PRODUCT_NAME = URLSessionExample;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -628,7 +628,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MarbelApp.app/MarbelApp";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/URLSessionExample.app/URLSessionExample";
 			};
 			name = Debug;
 		};
@@ -650,14 +650,14 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MarbelApp.app/MarbelApp";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/URLSessionExample.app/URLSessionExample";
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		182A3F7625D41AF000543C92 /* Build configuration list for PBXProject "MarbelApp" */ = {
+		182A3F7625D41AF000543C92 /* Build configuration list for PBXProject "URLSessionExample" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				182A3F9825D41AF200543C92 /* Debug */,
@@ -666,7 +666,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		182A3F9A25D41AF200543C92 /* Build configuration list for PBXNativeTarget "MarbelApp" */ = {
+		182A3F9A25D41AF200543C92 /* Build configuration list for PBXNativeTarget "URLSessionExample" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				182A3F9B25D41AF200543C92 /* Debug */,
@@ -675,7 +675,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		182A3F9D25D41AF200543C92 /* Build configuration list for PBXNativeTarget "MarbelAppTests" */ = {
+		182A3F9D25D41AF200543C92 /* Build configuration list for PBXNativeTarget "URLSessionExampleTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				182A3F9E25D41AF200543C92 /* Debug */,
