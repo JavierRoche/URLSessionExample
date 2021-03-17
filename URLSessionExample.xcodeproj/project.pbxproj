@@ -44,6 +44,8 @@
 		18C0092D25D97395008A5E15 /* ComicCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C0092C25D97395008A5E15 /* ComicCell.swift */; };
 		18C0092F25D973B6008A5E15 /* ComicCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C0092E25D973B6008A5E15 /* ComicCellViewModel.swift */; };
 		18C0093125D9AE08008A5E15 /* ComicTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C0093025D9AE08008A5E15 /* ComicTest.swift */; };
+		18E666EA2602169400EEC3A3 /* ViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E666E92602169400EEC3A3 /* ViewModelTest.swift */; };
+		18E666EC2602185300EEC3A3 /* MockCharsDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E666EB2602185300EEC3A3 /* MockCharsDataManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -98,6 +100,8 @@
 		18C0092C25D97395008A5E15 /* ComicCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComicCell.swift; sourceTree = "<group>"; };
 		18C0092E25D973B6008A5E15 /* ComicCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComicCellViewModel.swift; sourceTree = "<group>"; };
 		18C0093025D9AE08008A5E15 /* ComicTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComicTest.swift; sourceTree = "<group>"; };
+		18E666E92602169400EEC3A3 /* ViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelTest.swift; sourceTree = "<group>"; };
+		18E666EB2602185300EEC3A3 /* MockCharsDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockCharsDataManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -154,6 +158,8 @@
 		182A3F9425D41AF200543C92 /* URLSessionExampleTests */ = {
 			isa = PBXGroup;
 			children = (
+				18E666EB2602185300EEC3A3 /* MockCharsDataManager.swift */,
+				18E666E92602169400EEC3A3 /* ViewModelTest.swift */,
 				182A3F9525D41AF200543C92 /* MarbelAppTests.swift */,
 				18A9475C25D81D280068E31E /* CharacterTest.swift */,
 				18A9475E25D8246E0068E31E /* ThumbnailTest.swift */,
@@ -434,7 +440,9 @@
 				182A3F9625D41AF200543C92 /* MarbelAppTests.swift in Sources */,
 				18A9476725D82A6D0068E31E /* CoordinatorTest.swift in Sources */,
 				18A9475D25D81D280068E31E /* CharacterTest.swift in Sources */,
+				18E666EC2602185300EEC3A3 /* MockCharsDataManager.swift in Sources */,
 				18A9475F25D8246E0068E31E /* ThumbnailTest.swift in Sources */,
+				18E666EA2602169400EEC3A3 /* ViewModelTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -617,14 +625,14 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5NGAV2U6RN;
-				INFOPLIST_FILE = MarbelAppTests/Info.plist;
+				INFOPLIST_FILE = URLSessionExampleTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = Roche.MarbelAppTests;
+				PRODUCT_BUNDLE_IDENTIFIER = Roche.URLSessionExampleTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -639,14 +647,14 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5NGAV2U6RN;
-				INFOPLIST_FILE = MarbelAppTests/Info.plist;
+				INFOPLIST_FILE = URLSessionExampleTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = Roche.MarbelAppTests;
+				PRODUCT_BUNDLE_IDENTIFIER = Roche.URLSessionExampleTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

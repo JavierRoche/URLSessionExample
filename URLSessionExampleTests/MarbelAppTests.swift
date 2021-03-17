@@ -1,15 +1,15 @@
 //
-//  MarbelAppTests.swift
-//  MarbelAppTests
+//  URLSessionsExampleTests.swift
+//  URLSessionExampleTest
 //
 //  Created by APPLE on 10/02/2021.
 //  Copyright © 2021 Javier Roche. All rights reserved.
 //
 
 import XCTest
-@testable import MarbelApp
+@testable import URLSessionExample
 
-class MarbelAppTests: XCTestCase {
+class URLSessionsExampleTests: XCTestCase {
 
     override func setUp() {
         // Put setup code here. This method is called before the invocation of each test method in the class.
