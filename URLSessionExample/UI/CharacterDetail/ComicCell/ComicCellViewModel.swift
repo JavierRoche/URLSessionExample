@@ -2,7 +2,7 @@
 //  ComicCellViewModel.swift
 //  URLSessionsExample
 //
-//  Created by APPLE on 14/02/2021.
+//  Created by APPLE on 17/02/2021.
 //  Copyright © 2021 Javier Roche. All rights reserved.
 //
 

@@ -2,7 +2,7 @@
 //  CharsViewModel.swift
 //  URLSessionsExample
 //
-//  Created by APPLE on 11/02/2021.
+//  Created by APPLE on 18/02/2021.
 //  Copyright © 2021 Javier Roche. All rights reserved.
 //
 
@@ -29,6 +29,7 @@ class CharsViewModel {
     let charsDataManager: CharsDataManager
     /// Lista de modelos de personaje
     var charsViewModels: [CharCellViewModel] = []
+    @Published var error: Error?
     
     
     // MARK: Life Cycle
@@ -54,6 +55,7 @@ class CharsViewModel {
                 self?.delegate?.charsFetched()
                 
             case .failure(let error):
+                self?.error = error
                 if let errorType = error as? ApiError {
                     let message = ("Code\(errorType.code ?? String())\n\(errorType.message ?? String())")
                     self?.delegate?.errorFetchingChars(message: message)
